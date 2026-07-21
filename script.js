@@ -1227,6 +1227,19 @@ window.onload = function(){
 
 const savedName =
 localStorage.getItem("userName");
+const mainContent = document.getElementById("mainContent");
+
+if(localStorage.getItem("onboardingCompleted") === "true"){
+
+    document.getElementById("onboarding1").style.display = "none";
+    mainContent.style.display = "block";
+
+}else{
+
+    document.getElementById("onboarding1").style.display = "flex";
+    mainContent.style.display = "none";
+
+}
 
 if(savedName){
 
@@ -1740,17 +1753,17 @@ document.getElementById("onboarding14").style.display = "none";
 document.getElementById("onboarding15").style.display = "block";
 
 
-}
+} 
 
 function finishOnboarding(){
 
-localStorage.setItem(
-"onboardingCompleted",
-"true"
-);
+localStorage.setItem("onboardingCompleted","true");
 
+// Hide the last onboarding screen
 document.getElementById("onboarding15").style.display = "none";
 
+// Show the main app
+document.getElementById("mainContent").style.display = "block";
 
 }
 
