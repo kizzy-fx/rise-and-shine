@@ -704,9 +704,12 @@ Start My Journey 🚀
 
 <!-- MAIN CONTENT -->
 
-<div class="main-content" id="mainContent">
+<div class="main-content" id="mainContent" style="display:none;">
 
 <header>
+    <button onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+</button>
 
 <div class="welcome">
 
@@ -1149,7 +1152,7 @@ the more opportunities you create.
 👤
 </div>
 
-<h2 id="profileName">User</h2>
+<h2 id="profileTitle">User</h2>
 
 <div id="welcomeSetup">
 
@@ -1160,7 +1163,7 @@ type="text"
 id="userNameInput"
 placeholder="Enter your name">
 
-<button onclick="saveUserName()">
+<button onclick="saveName()">
 Continue
 </button>
 
@@ -1402,11 +1405,6 @@ Restore
 
 </button>
 
-<button onclick="showSection('quotes')">
-
-<i class="fas fa-book-open"></i>
-
-</button>
 
 <button onclick="showSection('goals')">
 
@@ -1420,9 +1418,7 @@ Restore
 
 </button>
 
-<button onclick="toggleMenu()">
-<i class="fas fa-bars"></i>
-</button>
+
 
 </div>
 

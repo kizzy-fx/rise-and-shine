@@ -970,8 +970,8 @@ transition:0.5s;
 .more-menu{
 display:none;
 position:fixed;
-bottom:80px;
-right:20px;
+top: 90px;
+left:20px;
 background:#111a3a;
 padding:15px;
 border-radius:15px;
@@ -1227,4 +1227,13 @@ display:none;
 .page.active{
     display: block;
 
+}
+
+header button{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
 }

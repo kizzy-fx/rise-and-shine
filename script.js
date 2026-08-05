@@ -1241,17 +1241,24 @@ if(localStorage.getItem("onboardingCompleted") === "true"){
 
 }
 
+
 if(savedName){
+
+console.log("Saved name:", savedName);
 
 document.getElementById(
 "profileName"
 ).textContent = savedName;
+
+document.getElementById("profileTitle").textContent = savedName;
 
 document.getElementById(
 "welcomeSetup"
 ).style.display = "none";
 
 }
+
+updateXP();
 
 };
 
@@ -1295,6 +1302,7 @@ function saveName(){
     }
 
     localStorage.setItem("userName", userName);
+    document.getElementById("profileName").textContent = userName;
 
     document.getElementById("onboarding3").style.display = "none";
     document.getElementById("onboarding4").style.display = "block";
@@ -1757,13 +1765,27 @@ document.getElementById("onboarding15").style.display = "block";
 
 function finishOnboarding(){
 
-localStorage.setItem("onboardingCompleted","true");
+    localStorage.setItem("onboardingCompleted","true");
 
-// Hide the last onboarding screen
-document.getElementById("onboarding15").style.display = "none";
+    // Save the name to the profile
+    const savedName = localStorage.getItem("userName");
 
-// Show the main app
-document.getElementById("mainContent").style.display = "block";
+    if(savedName){
+        document.getElementById("profileName").textContent = savedName;
+
+        const profileTitle = document.getElementById("profileTitle");
+        if(profileTitle){
+            profileTitle.textContent = savedName;
+        }
+    }
+
+    // Hide the last onboarding screen
+    document.getElementById("onboarding15").style.display = "none";
+
+    // Show the main app
+    document.getElementById("mainContent").style.display = "block";
+
+    updateXP();
 
 }
 
